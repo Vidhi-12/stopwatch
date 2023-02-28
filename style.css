@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-div{
+    display: flex;
+    margin: 10px 10px;
+    font-size: 20px;
+}
