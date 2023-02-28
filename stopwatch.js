@@ -9,18 +9,20 @@ let minTime = document.getElementById('min-time');
 let secTime = document.getElementById('sec-time');
 let milisecTime = document.getElementById('milisec-time');
 
+let castValue = document.getElementById('cast-div');
+
 let hr = 0, min = 0, sec = 0, milisec= 0;
 let castArr = []; let count =0, castStr = '';
 
 start.addEventListener('click' ,function(){
     timer = true;
-    console.log("hello");
+    // console.log("hello");
     stopWatch();
 })
 
 pause.addEventListener('click', function(){
     timer = false;
-    console.log("kill");
+    // console.log("kill");
 })
 
 reset.addEventListener('click', function(){
@@ -30,19 +32,26 @@ reset.addEventListener('click', function(){
     minTime.innerHTML = '00';
     secTime.innerHTML = '00';
     milisecTime.innerHTML = '000';
-    console.log("dare");
+    // console.log("dare");
 })
 
 cast.addEventListener('click' ,function(){
     // timer = false;
-    console.log("pale");
+    // console.log("pale");
     // watch();
-    // clickCast();
-    let str = castWatch(w);
-    console.log();
-    castArr.push(castStr);
+    clickCast();
+    // let str = castWatch(w);
+    // console.log(str);
+    // castStr = `${hrTime.value}:${minTime.value}:${secTime.value}:${milisecTime.value}`;
+    // console.log(castStr);
+    // castArr.push(castStr);
+    // for(let i=0; i<castArr.length;i++){
+    //     console.log(`${i+1} ${castArr[i]}`);
+    // }
+
     for(let i=0; i<castArr.length;i++){
-        console.log(`${i+1} ${castArr[i]}`);
+        // console.log(`CAST ${i+1} : ${castArr[i]}`);
+        castValue.innerHTML = `CAST ${i+1} : ${castArr[i]}`;
     }
 })
 
@@ -50,7 +59,7 @@ function stopWatch(){
     
     if(timer){
         milisec++;
-        if(milisec == 100){
+        if(milisec == 1000){
             sec++; milisec=0;
         }
         if(sec == 60){
@@ -81,7 +90,7 @@ function stopWatch(){
         secTime.innerHTML = second;
         milisecTime.innerHTML = milisecond;
         let w = castWatch(hour,minute,second,milisecond);
-        let str = clickCast(w);
+        // let str = clickCast(w);
         // console.log(milisec);
         // castStr = `${hour}:${minute}:${second}:${milisecond}`;
         setTimeout(stopWatch, 10);
@@ -94,11 +103,9 @@ function castWatch(h,m,s,ms){
     return castStr;
 }
 
-// function clickCast(w){
-//     let str = w;
-//     console.log();
-//     // castArr.push(castStr);
-//     // for(let i=0; i<castArr.length;i++){
-//     //     console.log(`${i+1} ${castArr[i]}`);
-//     // }
-// }
+function clickCast(){
+    let str = castStr;
+    // console.log(castStr);
+    castArr.push(castStr);
+    
+}

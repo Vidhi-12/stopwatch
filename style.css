@@ -15,3 +15,40 @@
     margin: 10px 10px;
     font-size: 20px;
 }
+
+.time-field, .colon-field{
+    padding: 20px;
+}
+
+.btn-field{
+    margin-left: 30px;
+}
+.btn{
+    padding: 10px 25px;
+    margin-left: 10px;
+    border: none;
+    background-color: white;
+}
+
+#start-btn{
+    border: 1px solid green;
+    color: green;
+}
+
+#pause-btn{
+    border: 1px solid red;
+    color: red;
+}
+#reset-btn{
+    border: 1px solid yellow;
+    color: yellow;
+}
+#cast-btn{
+    border: 1px solid black;
+    color: black;
+}
+
+.cast-div{
+    margin: 20px;
+    text-align: center;
+}
